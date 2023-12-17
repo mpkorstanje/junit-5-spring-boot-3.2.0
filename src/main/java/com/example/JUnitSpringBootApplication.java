@@ -1,4 +1,4 @@
-package nl.cofx.cucumber.boot;
+package com.example;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.SpringApplication;
@@ -8,16 +8,16 @@ import org.springframework.context.event.EventListener;
 
 @RequiredArgsConstructor
 @SpringBootApplication
-public class CucumberSpringBootApplication {
+public class JUnitSpringBootApplication {
 
-    private final CucumberTestRunner cucumberTestRunner;
+    private final JUnitTestRunner JUnitTestRunner;
 
     public static void main(String[] args) {
-        SpringApplication.run(CucumberSpringBootApplication.class, args);
+        SpringApplication.run(JUnitSpringBootApplication.class, args);
     }
 
     @EventListener
     public void run(ApplicationStartedEvent event) {
-        cucumberTestRunner.run();
+        JUnitTestRunner.run();
     }
 }
